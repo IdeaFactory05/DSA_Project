@@ -1,4 +1,4 @@
-package realestate;
+package realEstate;
 
 public class ListHouse implements Listable {
 // House information
