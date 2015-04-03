@@ -69,14 +69,7 @@ public class SortedList {
 		}
 		return list[currentPosition++];
 	}
-
-	// This method will give the previous element of the list
-	public int previous() {
-		if (currentPosition == -1) {
-			currentPosition = (list.length - 1);
-			return list[currentPosition];
-		}
-		return list[--currentPosition];
+	
 	}
         public void setPosition(){
             currentPosition = 0;        
