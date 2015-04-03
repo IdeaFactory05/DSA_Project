@@ -1,13 +1,5 @@
 package realestate;
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-/**
- *
- * @author sandharu1
- */
+
 public class ListHouse implements Listable{
     // House information
 
@@ -57,15 +49,15 @@ public class ListHouse implements Listable{
     }
 
     public String getPrice() {
-        
+        return price;
     }
 
     public String getSquareFeet() {
-        
+        return squareFeet;
     }
 
     public String getBedRooms() {
-        
+        return bedRooms;
     }
 }
 
@@ -73,7 +65,7 @@ interface Listable {
 
     public Listable copy();
 
-    
+    public int compareTo(Listable otherListHouse);
 
 }
 
