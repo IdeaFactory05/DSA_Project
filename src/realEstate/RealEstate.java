@@ -1,4 +1,4 @@
-package realestate;
+package realEstate;
 
 public class RealEstate extends javax.swing.JFrame {
 
