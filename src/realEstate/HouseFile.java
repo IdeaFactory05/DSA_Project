@@ -87,4 +87,77 @@ public class HouseFile {
             System.err.println("Problem writing to the file " + filePath);
         }
     
+
+  //Read method will read the specific given file and save the contain in writeArray
+    public void read() {
+        int flag = 0;//sortedListObject.find(Integer.parseInt(writeArray[2]));
+        if (flag != -1) {
+            try {
+                FileReader inputFile = new FileReader(filePath);
+                System.out.println(filePath);
+                BufferedReader bufferedReader = new BufferedReader(inputFile);
+                int i = 0;
+                while ((readArray[i] = bufferedReader.readLine()) != null) {
+                    System.out.println(readArray[i++]);
+                }
+                for(String line: readArray)
+                    System.out.println("*"+line);
+                bufferedReader.close();
+            } catch (IOException e) {
+                System.err.println("Problem Reading the file Text.txt");
+            }
+        }
+    }
+
+    public void readList() {
+        String[] readArray = new String[100];
+        int[] input = new int[100];
+        try {
+            FileReader inputFile = new FileReader(filePath);
+            BufferedReader bufferedReader = new BufferedReader(inputFile);
+            int i = 0;
+            while ((readArray[i] = bufferedReader.readLine()) != null) {
+                System.out.println(readArray[i++]);
+            }
+            bufferedReader.close();
+        } catch (IOException e) {
+            System.err.println("Problem Reading the file Text.txt");
+        }
+//        StringBuffer strbuf = new StringBuffer(readArray[0]);
+//        strbuf.replace(0, 1, "");
+//        readArray[0] = strbuf.toString();
+        for (int i = 0; i < readArray.length && readArray[i] != null; i++) {
+            SortedList.list[i] = Integer.parseInt(readArray[i]);
+        }
+//        for(int i=0;SortedList.list[i]!=-1 ;i++)
+//            System.out.println(SortedList.list[i]);
+    }
+
+    public void setFileName(String lotNumber) {
+        filePath = "C:\\Users\\win7\\Desktop\\RealEstate\\" + lotNumber + ".txt";
+        System.out.println(filePath);
+    }
+
+    public boolean checkFileExist() {
+        return fileObject.exists();
+    }
+
+    public void createDirectory() {
+        File file = new File("C:\\Users\\win7\\Desktop\\RealEstate");
+        if (!file.exists()) {
+            if (file.mkdir()) {
+                System.out.println("Directory is created!");
+            }
+        }
+    }
+    public void deleteFile(String file){
+        File newFile = new File("C:\\Users\\win7\\Desktop\\RealEstate\\"+file + ".txt");
+        if(newFile.exists())
+            newFile.delete();
+    }
+   public SortedList getSortList(){
+       return sortedListObject;
+    }
 }
+
+
