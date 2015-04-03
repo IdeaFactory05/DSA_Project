@@ -67,7 +67,8 @@ public class SortedList {
 			currentPosition = 0;
 			return list[currentPosition];
 		}
-		return list[currentPosition++];
+		currentPosition++;
+		return list[currentPosition];
 	}
 	
 	}
