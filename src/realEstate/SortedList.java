@@ -63,15 +63,15 @@ public class SortedList {
 
 	// This method will give the next element of the list
 	public int next() {
-		if (currentPosition == (list.length - 1)) {
+		if (currentPosition <= list.length &&list[currentPosition]==-1) {
 			currentPosition = 0;
 			return list[currentPosition];
 		}
-		currentPosition++;
-		return list[currentPosition];
+		return list[currentPosition++];
 	}
 	
-	}
+
+	// This method will give the previous element of the list
         public void setPosition(){
             currentPosition = 0;        
         }
