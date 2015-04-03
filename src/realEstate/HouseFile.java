@@ -16,7 +16,7 @@ public class HouseFile {
     private String  filePath = "C:\\Users\\win7\\Desktop\\RealEstate\\list.txt";
     private String[] readArray = new String[7];
     private String[] writeArray = new String[7];
-    private ListHouse listHouseObject = new ListHouse(writeArray[0], writeArray[1], writeArray[2], writeArray[3], writeArray[4], writeArray[5]);
+    private ListHouse listHouseObject = new ListHouse();
     private SortedList sortedListObject = new SortedList();
     private File fileObject = new File(filePath);
     public static String line;
