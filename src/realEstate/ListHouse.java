@@ -1,7 +1,7 @@
 package realestate;
 
-public class ListHouse implements Listable{
-    // House information
+public class ListHouse implements Listable {
+// House information
 
     private String lastName;
     private String firstName;
@@ -11,7 +11,7 @@ public class ListHouse implements Listable{
     private String bedRooms;
     
     public ListHouse(){}
-    public ListHouse(String lastName, String firstName, String lotNumber,
+    public void init(String lastName, String firstName, String lotNumber,
             String price, String squareFeet, String bedRooms) {
         this.lastName = lastName;
         this.firstName = firstName;
@@ -22,19 +22,15 @@ public class ListHouse implements Listable{
     }
 
     @Override
-    public Listable copy() // Returns a copy of this ListHouse
+    public void copy() // Returns a copy of this ListHouse
     {
-        ListHouse result = new ListHouse(lastName, firstName, lotNumber, price,
-                squareFeet, bedRooms);
-        return result;
+      
     }
 
     @Override
-    public int compareTo(Listable otherListHouse) // Houses are compared based on their lot numbers
+    public void compareTo() // Houses are compared based on their lot numbers
     {
-        ListHouse other = (ListHouse) otherListHouse;
-        Integer.parseInt(this.lotNumber);
-        return (Integer.parseInt(this.lotNumber) - Integer.parseInt(other.lotNumber));
+      
     }
     public String getFirstName() {
         return firstName;
@@ -63,9 +59,8 @@ public class ListHouse implements Listable{
 
 interface Listable {
 
-    public Listable copy();
+    public void copy();
 
-    public int compareTo(Listable otherListHouse);
+    public void compareTo();
 
 }
-
